@@ -72,7 +72,7 @@ node3
 </configuration>
 ```
 
-注意:以上配置集成的是hadoop ha集群。如果您的集群没有配置ha，hbase.rootdir 配置项目需要修改:hdfs://master:9000/hbase
+**👆注意**:以上配置集成的是hadoop ha集群。如果您的集群没有配置ha，hbase.rootdir 配置项目需要修改:hdfs://master:9000/hbase
 
 
 ###修改第三个配置文件
@@ -110,13 +110,18 @@ HBASE_MANAGES_ZK=false 表示，hbase和大家伙公用一个zookeeper集群，�
 ```   2017‐12‐27 06:27:54,882 INFO  [node01:16000.activeMasterManager] master.ServerManager: Waiting   for region servers count to settle; currently checked in 0, slept for 67247 ms, expecting   minimum of 1, maximum of 2147483647, timeout of 4500 ms, interval of 1500 ms.
 
 ```
+
+解决办法: 保证每台机器时间一致。
+	ntpdate ‐u 0.uk.pool.ntp.org ntpdate ‐u 1.uk.pool.ntp.org
+
+
    
 ###启动hbase
 start-hbase.sh
-   解决办法: 保证每台机器时间一致。
-	ntpdate ‐u 0.uk.pool.ntp.org ntpdate ‐u 1.uk.pool.ntp.org
 
-<!--
+然后：在浏览器中打开：http://node1:16010
+![](http://p2ehgqigv.bkt.clouddn.com/18-3-17/34336785.jpg)
+<!--
 
 create time: 2018-03-12 21:37:37
 Author: Alfred
