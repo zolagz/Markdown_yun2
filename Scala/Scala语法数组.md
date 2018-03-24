@@ -15,6 +15,14 @@
 ```### 遍历Array和ArrayBuffer```// 使用for循环和until遍历Array / ArrayBuffer// 使until是RichInt提供的函数for (i <- 0 until b.length)  println(b(i))
   // 跳跃遍历Array / ArrayBufferfor(i <- 0 until (b.length, 2))  println(b(i))// 从尾部遍历Array / ArrayBufferfor(i <- (0 until b.length).reverse)  println(b(i))// 使用“增强for循环”遍历Array / ArrayBufferfor (e <- b)  println(e)```### 数组常见操作```// 数组元素求和val a = Array(1, 2, 3, 4, 5)
 val sum = a.sum// 获取数组最大值val max = a.max// 对数组进行排序scala.util.Sorting.quickSort(a)// 获取数组中所有元素内容a.mkStringa.mkString(", ")a.mkString("<", ",", ">")// toString函数a.toStringb.toString```###使用yield和函数式编程转换数组```
+遍历一
+for (i <- arr if i % 2 == 0 ) yield i * 10
+
+遍历二
+arr.filter(_%2 == 0).map(_*10)
+
+
+
 // 对Array进行转换，获取的还是Arrayval a = Array(1, 2, 3, 4, 5)val a2 = for (ele <- a) yield ele * ele// 对ArrayBuffer进行转换，获取的还是ArrayBufferval b = ArrayBuffer[Int]()b += (1, 2, 3, 4, 5)val b2 = for (ele <- b) yield ele * ele// 结合if守卫，仅转换需要的元素val a3 = for (ele <- if ele % 2 == 0) yield ele * ele// 使用函数式编程转换数组（通常使用第一种方式）a.filter(_ % 2 == 0).map(2 * _)a.filter { _ % 2 == 0 } map { 2 * _ }
 ```### 算法案例：移除第一个负数之后的所有负数
 
