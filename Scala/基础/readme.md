@@ -1,5 +1,7 @@
 # readme
 
+[ Scala 学习笔记 ](http://nummy-demo.readthedocs.io/zh_CN/latest/)
+
 [参考笔记](https://www.jianshu.com/p/41dc2a0b3c10)
 
 <!--
