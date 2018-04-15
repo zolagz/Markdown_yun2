@@ -1,4 +1,5 @@
 # Scala语言基础
+[更多优质资源](https://blog.csdn.net/t1dmzks/article/details/69858060#t23)
 
 
 在scala命令行模式下输入：paste 进入多行编辑模式，然后通过ctrl + d 执行

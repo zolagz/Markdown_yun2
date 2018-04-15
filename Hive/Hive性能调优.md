@@ -1,12 +1,9 @@
-# Hive子查询
+# Hive性能调优
+[参考链接](https://www.cnblogs.com/smartloli/p/4356660.html)
 
-```
-select e.ename from emp e where e.deptno in (select d.deptno from dept d where d.dname = 'SALES' or d.dname = 'ACCOUNTING');
-
-```
 
 <!--
-create time: 2018-03-06 21:40:05
+create time: 2018-04-14 21:30:22
 Author: Alfred
 
 This file is created by Marboo<http://marboo.io> template file $MARBOO_HOME/.media/starts/default.md

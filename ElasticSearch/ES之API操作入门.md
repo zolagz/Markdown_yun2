@@ -1,12 +1,11 @@
-# Hive子查询
+# ES之API操作入门
+[参考链接](https://blog.csdn.net/didiaodeabing/article/details/79310710)
 
-```
-select e.ename from emp e where e.deptno in (select d.deptno from dept d where d.dname = 'SALES' or d.dname = 'ACCOUNTING');
 
-```
+[自定义分词器](https://blog.csdn.net/liangzhao_jay/article/details/59107933)
 
 <!--
-create time: 2018-03-06 21:40:05
+create time: 2018-04-14 17:39:34
 Author: Alfred
 
 This file is created by Marboo<http://marboo.io> template file $MARBOO_HOME/.media/starts/default.md

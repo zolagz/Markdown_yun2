@@ -1,12 +1,10 @@
-# Hive子查询
+# HBase Shell操作
 
-```
-select e.ename from emp e where e.deptno in (select d.deptno from dept d where d.dname = 'SALES' or d.dname = 'ACCOUNTING');
-
-```
+通过命令：hbase shell 启动一份客户端
+![](http://p2ehgqigv.bkt.clouddn.com/18-4-11/56010105.jpg)
 
 <!--
-create time: 2018-03-06 21:40:05
+create time: 2018-04-11 14:04:51
 Author: Alfred
 
 This file is created by Marboo<http://marboo.io> template file $MARBOO_HOME/.media/starts/default.md

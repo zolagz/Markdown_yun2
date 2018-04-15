@@ -11,7 +11,12 @@ vi   netcat-logger.conf# 定义这个agent中各组件的名字a1.sources = r1
 ```bin/flume-ng agent -c conf -f conf/netcat-logger.conf -n a1  -Dflume.root.logger=INFO,console```
 -c conf   指定flume自身的配置文件所在目录-f conf/netcat-logger.con  指定我们所描述的采集方案-n a1  指定我们这个agent的名字
 
-测试先要往agent采集监听的端口上发送数据，让agent有数据可采。随便在一个能跟agent节点联网的机器上：telnet anget-hostname  port   （telnet localhost 44444）###	Flume简单案例1．	采集目录到HDFS采集需求：服务器的某特定目录下，会不断产生新的文件，每当有新文件出现，就需要把文件采集到HDFS中去根据需求，首先定义以下3大要素	
+测试```
+nc node1 44444
+```![](https://img-blog.csdn.net/20170210150351560?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2lsZDQ2Y2F0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+
+
+先要往agent采集监听的端口上发送数据，让agent有数据可采。随便在一个能跟agent节点联网的机器上：telnet anget-hostname  port   （telnet localhost 44444）###	Flume简单案例1．	采集目录到HDFS采集需求：服务器的某特定目录下，会不断产生新的文件，每当有新文件出现，就需要把文件采集到HDFS中去根据需求，首先定义以下3大要素	
 *	采集源，即source——监控文件目录 :  spooldir	
 *	下沉目标，即sink——HDFS文件系统  :  hdfs sink	
 *	source和sink之间的传递通道——channel，可用file channel 也可以用内存channel配置文件编写：
