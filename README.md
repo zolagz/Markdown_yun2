@@ -7,4 +7,5 @@
 3. 修正
 4. 任务列表
 5. 部署相关
-[跳转百度](www.baidu.com)
+
+[跳转百度](http://www.baidu.com)
