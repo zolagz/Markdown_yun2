@@ -25,8 +25,7 @@ export HIVE_HOME=/root/apps/hive
 
 本命令会列出所有 mysql 的数据库。
 
-```bin/sqoop list-databases --connect jdbc:mysql://localhost:3306/ -- username root --password hadoop;
-```
+```bin/sqoop list-databases --connect jdbc:mysql://localhost:3306/ --username root --password admin;```
 
 到这里，整个 Sqoop 安装工作完成。
 
