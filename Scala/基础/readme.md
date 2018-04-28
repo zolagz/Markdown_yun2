@@ -4,6 +4,8 @@
 
 [参考笔记](https://www.jianshu.com/p/41dc2a0b3c10)
 
+[scala wordCount 参考](https://blog.csdn.net/qq_31780525/article/details/79036728)
+
 <!--
 create time: 2018-03-08 20:03:09
 Author: Alfred
