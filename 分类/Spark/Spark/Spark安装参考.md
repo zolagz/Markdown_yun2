@@ -1,6 +1,10 @@
 # Spark安装参考
 
 
+默认UI管理界面:
+
+[http://localhost:8080](http://localhost:8080)
+
 [参考链接](https://www.linuxidc.com/Linux/2017-08/146215.htm)
 
 <!--

@@ -82,6 +82,16 @@ export JAVA_HOME=/root/apps/jdk1.8.0_65
 </property>
 
 ```
+视频地址：hadoop-day02 - 09 集群配置4‘30’‘
+
+```
+vi salves 
+
+node1
+node2
+node3
+
+```
 
 ####slaves  配置在hdfs-site.xml
 
@@ -99,7 +109,9 @@ export JAVA_HOME=/root/apps/jdk1.8.0_65
 
 ##hadoop 集群启动方式
 
-首次启动 HDFS 时，必须对其进行格式化操作。本质上是一些清理和 准备工作，因为此时的 HDFS 在物理上还是不存在的。hdfs namenode–format 或者 hadoop namenode –format
+首次启动 HDFS 时，必须对其进行格式化操作。本质上是一些清理和 准备工作，因为此时的 HDFS 在物理上还是不存在的。
+
+**格式化是在主角色上进行**	hdfs namenode–format 或者 hadoop namenode –format
 
 
 ####1.1. 单节点逐个启动在主节点上使用以下命令启动 HDFS NameNode:在每个从节点上使用以下命令启动 HDFS DataNode:在主节点上使用以下命令启动 YARN ResourceManager:在每个从节点上使用以下命令启动 YARN nodemanager:以上脚本位于$HADOOP_PREFIX/sbin/目录下。如果想要停止某个节点上某个 角色，只需要把命令中的 start 改为 stop 即可。####1.2. 脚本一键启动如果配置了 etc/hadoop/slaves 和 ssh 免密登录，则可以使用程序脚本启动 所有 Hadoop 两个集群的相关进程，在主节点所设定的机器上执行。hdfs:$HADOOP_PREFIX/sbin/start-dfs.sh 
