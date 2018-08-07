@@ -1,7 +1,66 @@
 # 安装MySQL
 
-----------------------👇 2018-02-26更新------------------------
+### mysql 忘记密码
 
+[参考链接](https://www.cnblogs.com/gumuzi/p/5711495.html)
+
+vi /etc/my.cnf
+
+在[mysqld]后面任意一行添加“skip-grant-tables”用来跳过密码验证的过程
+![](https://images2015.cnblogs.com/blog/862200/201607/862200-20160727153846934-2016310105.png)
+skip-grant-tables 
+
+保存文档并退出：
+
+2.接下来我们需要重启MySQL：
+systemctl restart mysql.service
+
+3重启之后输入#mysql即可进入mysql。
+
+![](https://images2015.cnblogs.com/blog/862200/201607/862200-20160727154613466-19775596.png)
+
+接下来就是用sql来修改root的密码
+
+```
+mysql> use mysql;
+mysql> update user set password=password("你的新密码") where user="root";
+mysql> flush privileges;
+mysql> quit
+
+```
+到这里root账户就已经重置成新的密码了。
+
+5.编辑my.cnf,去掉刚才添加的内容，然后重启MySQL。大功告成！
+
+
+
+
+----------------------👇 2018-07-09更新------------------------
+
+在centos 7 上，安装mysql后，安装的是MariaDB版本
+
+###安装后
+
+成功安装MariaDB后，设置root密码。 全新安装将具有空白密码。 输入以下内容设置新密码 -
+
+>mysqladmin -u root password "[enter your password here]"
+
+例如
+
+```
+# mysqladmin -u root password "admin"
+# mysql -uroot -padmin
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 4
+Server version: 10.0.35-MariaDB-wsrep MariaDB Server, wsrep_25.23.rc3fc46e
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>
+```
+----------------------👇 2018-02-26更新------------------------
 ###yum 安装mysql
 
 yum install mysql mysql-server mysql-devel 

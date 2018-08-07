@@ -166,5 +166,37 @@ vm.max_map_count=655360
 
 ```
 
+问题六：配置外网访问：[参考](https://www.cnblogs.com/yrxns/p/6418632.html)
+
+如果浏览器中访问http://localhost:9200/没有返回预期的结果，就需要修改Elasticsearch的配置，使其支持外网访问。
+
+首先，按Ctrl +C停止Elasticsearch
+
+然后，打开Elasticsearch的配置文件vi config/elasticsearch.yml
+
+找到network.host这一行。
+
+![](http://p2ehgqigv.bkt.clouddn.com/18-7-10/86256700.jpg)
+
+将该行最前面的#去掉，修改成network.host:  0.0.0.0修改之后，如下图
+
+![](http://p2ehgqigv.bkt.clouddn.com/18-7-10/85264265.jpg)
+
+按Esc，再按:wq保存并退出编辑elasticsearch配置文件
+
+接着，重新运行./bin/elasticsearch
+
+在浏览器中，访问http://xxxx:9200/（xxxx是运行elasticsearch的服务器的ip地址），你就能看到成功的信息啦。
+
+ 
+
+六、后台运行
+
+最后还有一个小问题，如果你在服务器上安装Elasticsearch，而你想在本地机器上进行开发，这时候，你很可能需要在关闭终端的时候，让Elasticsearch继续保持运行。最简单的方法就是使用nohup。先按Ctrl + C，停止当前运行的Elasticsearch，改用下面的命令运行Elasticsearch
+
+nohup./bin/elasticsearch&
+
+这样，你就可以放心地关闭服务器终端，而不用担心Elasticsearch也跟着关闭了。
+
 
 
